@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  ____       _               _             _                     "
 " | ___|  ___| |__   ___  ___( )___  __   _(_)_ __ ___  _ __ ___  "
 " |___ \ / _ \ '_ \ / _ \/ __|// __| \ \ / / | '_ ` _ \| '__/ __| "
@@ -36,37 +36,40 @@ set shiftwidth=2
 set display=lastline
 set pumheight=10
 
+"like spacemacs
+let mapleader = "\<Space>"
+
 "tab
-nnoremap <Space>tt :<C-u>tabe<CR>
-nnoremap <Space>th gT
-nnoremap <Space>tl gt
+nnoremap <leader>tt :<C-u>tabe<CR>
+nnoremap <leader>th gT
+nnoremap <leader>tl gt
 
 "window
-nnoremap <Space>w- <C-w>s
-nnoremap <Space>w/ <C-w>v
-nnoremap <Space>ww <C-w>w
-nnoremap <Space>w= <C-w>=
-nnoremap <Space>wj <C-w>-
-nnoremap <Space>wk <C-w>+
-nnoremap <Space>wh <C-w><
-nnoremap <Space>wl <C-w>>
-nnoremap <Space>wd <C-w>c
+nnoremap <leader>w- <C-w>s
+nnoremap <leader>w/ <C-w>v
+nnoremap <leader>ww <C-w>w
+nnoremap <leader>w= <C-w>=
+nnoremap <leader>wj <C-w>-
+nnoremap <leader>wk <C-w>+
+nnoremap <leader>wh <C-w><
+nnoremap <leader>wl <C-w>>
+nnoremap <leader>wd <C-w>c
 
 "buffer
-nnoremap <Space>b :<C-u>b 
-nnoremap <Space>bb :<C-u>ls<CR>
-nnoremap <Space>bp :<C-u>bp<CR>
-nnoremap <Space>bn :<C-u>bn<CR>
-nnoremap <Space>bd :<C-u>bd<CR>
+nnoremap <leader>b :<C-u>b 
+nnoremap <leader>bb :<C-u>ls<CR>
+nnoremap <leader>bp :<C-u>bp<CR>
+nnoremap <leader>bn :<C-u>bn<CR>
+nnoremap <leader>bd :<C-u>bd<CR>
 
 "file explorer
-nnoremap <Space>ff :<C-u>E<CR>
-nnoremap <Space>f- :<C-u>Se<CR>
-nnoremap <Space>f/ :<C-u>Ve<CR>
+nnoremap <leader>ff :<C-u>E<CR>
+nnoremap <leader>f- :<C-u>Se<CR>
+nnoremap <leader>f/ :<C-u>Ve<CR>
 
 "replace
-nnoremap <Space>s :<C-u>%s///g<Left><Left><Left>
-vnoremap <Space>s :s///g<Left><Left><Left>
+nnoremap <leader>s :<C-u>%s///g<Left><Left><Left>
+vnoremap <leader>s :s///g<Left><Left><Left>
 
 "cursor
 noremap k gk
