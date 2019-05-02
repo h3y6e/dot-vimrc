@@ -7,8 +7,7 @@
 "                                                                 "
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"essential
-set nocompatible
+"color
 syntax enable
 colorscheme darkblue
 highlight Normal ctermbg=none
@@ -16,25 +15,30 @@ highlight NonText ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none
-set encoding=utf-8
-set number
-set ruler
+
+"essential
 set list
-set listchars=tab:–_,trail:·,eol:¬,extends:»,precedes:«,nbsp:%
+set ruler
+set number
+set hidden
 set incsearch
 set showmatch
-set matchtime=1
-set nowrapscan
-set ignorecase
 set smartcase
-set hidden
-set history=1000
-set smartindent
 set expandtab
 set tabstop=2
+set nowrapscan
+set ignorecase
+set autoindent
+set matchtime=1
+set nocompatible
+set history=1000
 set shiftwidth=2
-set display=lastline
 set pumheight=10
+set encoding=utf-8
+set display=lastline
+set nf=alpha,octal,hex,bin
+set fileencodings=utf-8,ios-2022-jp,euc-jp,sjis,cp932
+set listchars=tab:–~,trail:·,eol:¬,extends:»,precedes:«,nbsp:%
 
 "like spacemacs
 let mapleader = "\<Space>"
@@ -81,8 +85,18 @@ cnoremap <C-b> <Left>
 cnoremap <C-a> <C-b>
 cnoremap <C-u> <C-e><C-u>
 
+"bracket autocompletion
+inoremap { {}<ESC>i
+inoremap {} {}
+inoremap {<Enter> {}<Left><CR><ESC><S-o><Tab>
+inoremap ( ()<ESC>i
+inoremap () ()
+inoremap (<Enter> ()<Left><CR><ESC><S-o><Tab>
+
 "other
 nnoremap Y y$
 
 "Whitespace
-au BufNewFile,BufRead *.ws setlocal nosmartindent noexpandtab tabstop=1
+au BufNewFile,BufRead *.ws setlocal nosmartindent noexpandtab tabstop=
+
+
