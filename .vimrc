@@ -95,6 +95,11 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o><Tab>
 
 "other
 nnoremap Y y$
+nnoremap > >>
+nnoremap < <<
+nnoremap x "_x
+nnoremap s "_s
+inoremap <C-]> <ESC><Right>
 
 "Whitespace
 au BufNewFile,BufRead *.ws setlocal nosmartindent noexpandtab tabstop=
