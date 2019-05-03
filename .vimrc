@@ -1,11 +1,10 @@
- """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  ____       _               _             _                     "
-" | ___|  ___| |__   ___  ___( )___  __   _(_)_ __ ___  _ __ ___  "
-" |___ \ / _ \ '_ \ / _ \/ __|// __| \ \ / / | '_ ` _ \| '__/ __| "
-"  ___) |  __/ |_) |  __/ (__  \__ \  \ V /| | | | | | | | | (__  "
-" |____/ \___|_.__/ \___|\___| |___/ (_)_/ |_|_| |_| |_|_|  \___| "
-"                                                                 "
- """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"        _                     "
+" __   _(_)_ __ ___  _ __ ___  "
+" \ \ / / | '_ ` _ \| '__/ __| "
+"  \ V /| | | | | | | | | (__  "
+" (_)_/ |_|_| |_| |_|_|  \___| "
+"                              "
 
 "color
 syntax enable
@@ -17,6 +16,9 @@ highlight Folded ctermbg=none
 highlight EndOfBuffer ctermbg=none
 
 "essential
+if &compatible
+  set nocompatible
+endif
 set list
 set ruler
 set number
@@ -30,7 +32,6 @@ set nowrapscan
 set ignorecase
 set autoindent
 set matchtime=1
-set nocompatible
 set history=1000
 set shiftwidth=2
 set pumheight=10
@@ -42,7 +43,7 @@ set fileencodings=utf-8,ios-2022-jp,euc-jp,sjis,cp932
 set listchars=tab:»-,trail:·,extends:»,precedes:«,nbsp:%
 
 "like spacemacs
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 nnoremap <Space> <Nop>
 nnoremap <leader>fed :<C-u>e ~/.vimrc<CR>
 nnoremap <leader>feR :<C-u>w<CR>:so ~/.vimrc<CR>
@@ -114,5 +115,6 @@ inoremap <C-]> <ESC><Right>
 "fileType
 augroup fileType
   autocmd!
+  "Whitespace
   autocmd BufNewFile,BufRead *.ws setlocal noautoindent noexpandtab tabstop=1 listchars=tab:–~,trail:·,eol:¬,extends:»,precedes:«,nbsp:%
 augroup END
