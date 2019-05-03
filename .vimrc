@@ -35,13 +35,21 @@ set history=1000
 set shiftwidth=2
 set pumheight=10
 set encoding=utf-8
+scriptencoding utf-8
 set display=lastline
-set nf=alpha,octal,hex,bin
+set nrformats=alpha,octal,hex,bin
 set fileencodings=utf-8,ios-2022-jp,euc-jp,sjis,cp932
-set listchars=tab:–~,trail:·,eol:¬,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,trail:·,extends:»,precedes:«,nbsp:%
 
 "like spacemacs
 let mapleader = "\<Space>"
+nnoremap <Space> <Nop>
+nnoremap <leader>fed :<C-u>e ~/.vimrc<CR>
+nnoremap <leader>feR :<C-u>w<CR>:so ~/.vimrc<CR>
+
+"number
+nnoremap <leader>nn :<C-u>set nu!<CR>
+nnoremap <leader>nr :<C-u>set rnu!<CR>
 
 "tab
 nnoremap <leader>tt :<C-u>tabe<CR>
@@ -80,6 +88,8 @@ noremap k gk
 noremap j gj
 noremap gk k
 noremap gj j
+noremap H ^
+noremap L $
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-a> <C-b>
@@ -101,7 +111,8 @@ nnoremap x "_x
 nnoremap s "_s
 inoremap <C-]> <ESC><Right>
 
-"Whitespace
-au BufNewFile,BufRead *.ws setlocal nosmartindent noexpandtab tabstop=
-
-
+"fileType
+augroup fileType
+  autocmd!
+  autocmd BufNewFile,BufRead *.ws setlocal noautoindent noexpandtab tabstop=1 listchars=tab:–~,trail:·,eol:¬,extends:»,precedes:«,nbsp:%
+augroup END
