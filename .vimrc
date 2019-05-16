@@ -31,6 +31,7 @@ set tabstop=2
 set nowrapscan
 set ignorecase
 set autoindent
+set cursorline
 set matchtime=1
 set history=1000
 set shiftwidth=2
@@ -48,24 +49,31 @@ nnoremap <Space> <Nop>
 nnoremap <leader>fed :<C-u>e ~/.vimrc<CR>
 nnoremap <leader>feR :<C-u>w<CR>:so ~/.vimrc<CR>
 
+"quit
+nnoremap <leader>qq :<C-u>qa<CR>
+nnoremap <leader>wq :<C-u>wq<CR>
+
 "number
 nnoremap <leader>nn :<C-u>set nu!<CR>
 nnoremap <leader>nr :<C-u>set rnu!<CR>
 
-"tab
-nnoremap <leader>tt :<C-u>tabe<CR>
-nnoremap <leader>th gT
-nnoremap <leader>tl gt
+"highlight
+nnoremap <leader><leader> :<C-u>nohlsearch<CR>
 
 "window
 nnoremap <leader>w- <C-w>s
 nnoremap <leader>w/ <C-w>v
 nnoremap <leader>ww <C-w>w
+nnoremap <leader>wW <C-w>W
+nnoremap <leader>0  <C-w>t
+nnoremap <leader>1  <C-w>t<C-w>w
+nnoremap <leader>2  <C-w>t<C-w>w<C-w>w
+nnoremap <leader>3  <C-w>t<C-w>w<C-w>w<C-w>w
+nnoremap <leader>4  <C-w>t<C-w>w<C-w>w<C-w>w<C-w>w
+nnoremap <leader>5  <C-w>t<C-w>w<C-w>w<C-w>w<C-w>w<C-w>w
 nnoremap <leader>w= <C-w>=
-nnoremap <leader>wj <C-w>-
-nnoremap <leader>wk <C-w>+
-nnoremap <leader>wh <C-w><
-nnoremap <leader>wl <C-w>>
+nnoremap <leader>w< <C-w><
+nnoremap <leader>w> <C-w>>
 nnoremap <leader>wd <C-w>c
 
 "buffer
@@ -103,6 +111,9 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o><Tab>
 inoremap ( ()<ESC>i
 inoremap () ()
 inoremap (<Enter> ()<Left><CR><ESC><S-o><Tab>
+inoremap [ []<ESC>i
+inoremap [] []
+inoremap [<Enter> []<Left><CR><ESC><S-o><Tab>
 
 "other
 nnoremap Y y$
